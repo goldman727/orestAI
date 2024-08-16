@@ -1,7 +1,19 @@
 import React from 'react';
 import { Button, Navbar, Nav, Container } from 'react-bootstrap';
+import appwriteSDK from "../utils";
 
 export default function MainNavbar() {
+    const authRedirect = async () => {
+        try {
+          await appwriteSDK.account.createOAuth2Session(
+            "github",
+            "http://localhost:3000/welcome",
+            "http://localhost:3000"
+          );
+        } catch (error) {
+          console.log(error);
+        }
+      };
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -13,7 +25,7 @@ export default function MainNavbar() {
             </Nav>
             <Nav>
                 <Nav.Item>
-                    <Button variant="outline-light" href="/signin" className="rounded-pill">Sign In</Button>
+                    <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">Sign In</Button>
                 </Nav.Item>
             </Nav>
         </Navbar.Collapse>

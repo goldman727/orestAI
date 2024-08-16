@@ -17,10 +17,10 @@ export default function MainContainer() {
         <Container>
           <Row>
             <Col>
-              <h1>Heading</h1>
+              <h1>Pair program with your codebase</h1>
               <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">Get Started for Free</Button>
             </Col>
           </Row>
         </Container>
     );
-  }
+}
