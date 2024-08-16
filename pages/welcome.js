@@ -1,8 +1,8 @@
 import styles from "../styles/Home.module.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import appwriteSDK from "../utils";
+import { Button } from 'react-bootstrap';
 
 function welcome() {
   const [user, setUser] = useState(null);
@@ -38,9 +38,7 @@ function welcome() {
             <p>
               Email: <span className="fs-3 fw-normal">{user.email}</span>
             </p>
-            <button onClick={logOut} className="btn-danger mt-2 fs-3">
-              Log Out
-            </button>
+            <Button variant="primary" className="mt-3" onClick={logOut}>Log Out</Button>
           </div>
         )}
       </main>
