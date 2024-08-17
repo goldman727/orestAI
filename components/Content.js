@@ -59,7 +59,7 @@ export default function Content() {
                 <p>Based on GitHub users</p>
                 <p>$20</p>
                 <p>/user/month</p>
-                <hr></hr>
+                <hr className='hr-class'></hr>
                 <Button>Get Started</Button>
               </div>
             </Col>

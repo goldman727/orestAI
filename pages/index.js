@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import appwriteSDK from "../utils";
 import MainNavbar from "../components/Navbar";
 import Content from "../components/Content";
+import Footer from "../components/footer";
 
 export default function Home() {
   const authRedirect = async () => {
@@ -25,6 +26,7 @@ export default function Home() {
       </Head>
       <MainNavbar />
       <Content />
+      <Footer />
     </div>
   );
 }

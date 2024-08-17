@@ -1,5 +1,6 @@
 .body {
     background: black;
+    padding-bottom: 1px;
 }
 
 .homeOutline{
@@ -30,4 +31,8 @@
     background: rgba(75, 71, 71, 0.678);
     opacity: 0.9;
     height: 300px;
+}
+
+.hr-class {
+    margin: 10px;
 }
