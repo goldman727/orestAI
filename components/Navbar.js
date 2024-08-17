@@ -15,7 +15,7 @@ export default function MainNavbar() {
         }
       };
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar className='custom-navbar' variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="/">OrestAI</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

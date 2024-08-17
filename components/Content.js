@@ -45,6 +45,33 @@ export default function Content() {
               </div>
             </Col>
           </Row>
+          <Row>
+            <Col>
+              <p className='pircing-font'>Pricing</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col md="2"></Col>
+            <Col md="4">
+              <div className='pricing-box'>
+                <h3>Teams</h3>
+                <p>All inclusive plan</p>
+                <p>Based on GitHub users</p>
+                <p>$20</p>
+                <p>/user/month</p>
+                <hr></hr>
+                <Button>Get Started</Button>
+              </div>
+            </Col>
+            <Col md="4">
+              <div className='pricing-box' style={{textAlign: 'center'}}>
+                <h3>More than</h3>
+                <h3>100 users?</h3>
+                <a href='https://www.linkedin.com/in/kuzmychenko-orest-529940318/'><h3>Book a call with our team</h3></a>
+              </div>
+            </Col>
+            <Col md="2"></Col>
+          </Row>
         </Container>
     );
 }
