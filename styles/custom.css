@@ -1,3 +1,12 @@
 .body {
     background: black;
 }
+
+.homeOutline{
+    border: 1px solid white;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 40px;
+    border-radius: 10px;
+}

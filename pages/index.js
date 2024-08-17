@@ -2,7 +2,7 @@ import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
 import appwriteSDK from "../utils";
 import MainNavbar from "../components/Navbar";
-import MainContainer from "../components/Container";
+import Content from "../components/Content";
 
 export default function Home() {
   const authRedirect = async () => {
@@ -24,7 +24,7 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainNavbar />
-      <MainContainer />
+      <Content />
     </div>
   );
 }
