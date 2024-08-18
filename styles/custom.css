@@ -1,3 +1,38 @@
 .body {
     background: black;
+    padding-bottom: 1px;
+}
+
+.homeOutline{
+    border: 1px solid white;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.custom-navbar {
+    background: black;
+    padding: 40px !important;
+}
+
+.pircing-font {
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.pricing-box {
+    border: 1px solid white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(75, 71, 71, 0.678);
+    opacity: 0.9;
+    height: 300px;
+}
+
+.hr-class {
+    margin: 10px;
 }
