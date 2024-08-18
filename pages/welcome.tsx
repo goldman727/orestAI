@@ -47,17 +47,17 @@ const Welcome: React.FC = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className="mb-4">{title}</h1>
+        <h1>{title}</h1>
         {user && (
           <div>
             <p>
               {User}{" "}
-              <span className="fs-3 fw-bold text-capitalize">{user.name}</span>
+              <span>{user.name}</span>
             </p>
             <p>
-              {email} <span className="fs-3 fw-normal">{user.email}</span>
+              {email} <span>{user.email}</span>
             </p>
-            <Button variant="primary" className="mt-3" onClick={logOut}>{logOutButton}</Button>
+            <Button onClick={logOut}>{logOutButton}</Button>
           </div>
         )}
       </main>

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import "bootstrap/dist/css/bootstrap.min.css";
 import appwriteSDK from "../utils";
 import MainNavbar from "../components/Navbar";
 import Content from "../components/Content";
@@ -21,17 +20,17 @@ const Home: React.FC = () => {
     }
   };
   return (
-    <div className="body">
-      <Head>
-          <title>{title}</title>
-          <meta name="description" content={description} />
-          <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <MainNavbar />
-      <Content />
-      <Footer />
-    </div>
-  );
+  <div className="body">
+    <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <MainNavbar />
+    <Content />
+    <Footer />
+  </div>
+);
 }
 
 export default Home;

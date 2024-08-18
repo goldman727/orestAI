@@ -1,5 +1,5 @@
-import { Container, Row, Col, Button } from 'react-bootstrap';
 import appwriteSDK from "../utils";
+import { Button, Container, Flex, Box, Section } from '@radix-ui/themes';
 
 const Content: React.FC = () => {
   const authRedirect = async () => {
@@ -15,68 +15,62 @@ const Content: React.FC = () => {
   };
 
   const MainContent: React.FC = () => (
-    <Row>
-      <Col>
-        <h1>Pair program with your codebase</h1>
-        <p>Squire is your AI pair programmer: chat with your codebase, get an AI code review, and customize it to your style. Have greater impact with less toil - be the hero of your team and hire a Squire who does not need sleep.</p>
-        <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">Get Started for Free</Button>
-      </Col>
-    </Row>
+    <Section>
+      <h1>Pair program with your codebase</h1>
+      <p>Squire is your AI pair programmer: chat with your codebase, get an AI code review, and customize it to your style. Have greater impact with less toil - be the hero of your team and hire a Squire who does not need sleep.</p>
+      <Button onClick={authRedirect}>Get Started for Free</Button>
+    </Section>
   );
 
   const Features: React.FC = () => (
-    <Row>
-      <Col md={4}>
-        <div className='homeOutline'>
+    <Flex gap="large">
+      <Box>
+        <div>
           <h3>AI Code Reviews</h3>
           <p>Before Squire, developers worried about everything during review. Now they focus on high leverage work like architecture, future planning, and impact.</p>
         </div>
-      </Col>
-      <Col md={4}>
-        <div className='homeOutline'>
+      </Box>
+      <Box>
+        <div>
           <h3>Pull Request Summaries</h3>
           <p>Never write a PR summary again. Squire writes perfect abstracts and detailed changes that keep your code documented and your team locked in.</p>
         </div>
-      </Col>
-      <Col md={4}>
-        <div className='homeOutline'>
+      </Box>
+      <Box>
+        <div>
           <h3>Issue Enrichment</h3>
           <p>Coming Soon</p>
           <p>With full codebase context Squire will automatically enhance issues with relevant files, TODOs, and got-ya’s.</p>
         </div>
-      </Col>
-    </Row>
+      </Box>
+    </Flex>
   );
 
   const Pricing: React.FC = () => (
     <>
-      <Row>
-        <Col>
-          <p className='pircing-font'>Pricing</p>
-        </Col>
-      </Row>
-      <Row>
-        <Col md="2"></Col>
-        <Col md="4">
-          <div className='pricing-box'>
+      <Box>
+        <p>Pricing</p>
+      </Box>
+      <Flex>
+        <Box>
+          <div>
             <h3>Teams</h3>
             <p>All inclusive plan</p>
             <p>Based on GitHub users</p>
             <p>$20</p>
             <p>/user/month</p>
-            <hr className='hr-class'></hr>
+            <hr />
             <Button>Get Started</Button>
           </div>
-        </Col>
-        <Col md="4">
-          <div className='pricing-box' style={{textAlign: 'center'}}>
+        </Box>
+        <Box>
+          <div>
             <h3>More than</h3>
             <h3>100 users?</h3>
             <a href='https://www.linkedin.com/in/kuzmychenko-orest-529940318/'><h3>Book a call with our team</h3></a>
           </div>
-        </Col>
-        <Col md="2"></Col>
-      </Row>
+        </Box>
+      </Flex>
     </>
   );
 

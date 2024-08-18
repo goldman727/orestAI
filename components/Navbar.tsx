@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 import appwriteSDK from "../utils";
 import componentConstants from '../components/constants';
 
@@ -12,27 +11,17 @@ const MainNavbar: React.FC = () => {
         "http://localhost:3000"
       );
     } catch (error) {
-      console.error("OAuth2 session creation failed:", error);
+      console.error(componentConstants.navbar.oauthError, error);
     }
   };
 
   return (
-    <Navbar className='custom-navbar' variant="dark" expand="lg">
-      <Container>
-        <Navbar.Brand href="/">{componentConstants.navbar.logo}</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">{componentConstants.navbar.pricing}</Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Item>
-              <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">{componentConstants.navbar.signIn}</Button>
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav>
+      <div className="logo">{componentConstants.navbar.logo}</div>
+      <ul>
+        <li><button onClick={authRedirect}>Get Started</button></li>
+      </ul>
+    </nav>
   );
 }
 

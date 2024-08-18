@@ -15,6 +15,7 @@ const componentConstants = {
         pricing: 'Pricing',
         contact: 'Contact',
         signIn: 'Sign In',
+        oauthError: 'OAuth2 session creation failed:',
     },
 }
 
