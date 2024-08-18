@@ -1,4 +1,5 @@
 import { Appwrite } from "appwrite";
+
 const appwriteSDK = new Appwrite();
 appwriteSDK
   .setEndpoint("https://cloud.appwrite.io/v1")
