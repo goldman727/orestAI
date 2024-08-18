@@ -2,7 +2,8 @@ import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
 import appwriteSDK from "../utils";
 import MainNavbar from "../components/Navbar";
-import MainContainer from "../components/Container";
+import Content from "../components/Content";
+import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
   const authRedirect = async () => {
@@ -16,7 +17,6 @@ const Home: React.FC = () => {
       console.log(error);
     }
   };
-
   return (
     <div className="body">
       <Head>
@@ -25,7 +25,8 @@ const Home: React.FC = () => {
           <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainNavbar />
-      <MainContainer />
+      <Content />
+      <Footer />
     </div>
   );
 }
