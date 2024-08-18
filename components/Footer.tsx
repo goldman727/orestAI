@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <div style={{textAlign: 'center', margin:'50px'}}>
         <hr className='hr-class'></hr>
@@ -8,3 +8,5 @@ export default function Footer() {
     </div>
   );
 }
+
+export default Footer;

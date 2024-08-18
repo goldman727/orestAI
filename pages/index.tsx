@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import appwriteSDK from "../utils";
 import MainNavbar from "../components/Navbar";
 import Content from "../components/Content";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 
-export default function Home() {
+const Home: React.FC = () => {
   const authRedirect = async () => {
     try {
       await appwriteSDK.account.createOAuth2Session(
@@ -30,3 +30,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

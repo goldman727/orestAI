@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 import appwriteSDK from "../utils";
 
-export default function MainNavbar() {
+const MainNavbar: React.FC = () => {
     const authRedirect = async () => {
         try {
           await appwriteSDK.account.createOAuth2Session(
@@ -33,3 +33,5 @@ export default function MainNavbar() {
     </Navbar>
   );
 }
+
+export default MainNavbar;

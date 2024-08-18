@@ -1,8 +1,7 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import appwriteSDK from "../utils";
 
-
-export default function Content() {
+const Content: React.FC = () => {
 
     const authRedirect = async () => {
         try {
@@ -15,12 +14,13 @@ export default function Content() {
           console.log(error);
         }
       };
+
     return (
         <Container>
           <Row>
             <Col>
               <h1>Pair program with your codebase</h1>
-              <p>Squire is your AI pair programmer: chat with your codebase, get an AI code review, and customize it to your style. Have greater impact with less toil - be the hero of your team and hire a Squire who doesn't need sleep.</p>
+              <p>Squire is your AI pair programmer: chat with your codebase, get an AI code review, and customize it to your style. Have greater impact with less toil - be the hero of your team and hire a Squire who does not need sleep.</p>
               <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">Get Started for Free</Button>
             </Col>
           </Row>
@@ -75,3 +75,5 @@ export default function Content() {
         </Container>
     );
 }
+
+export default Content;

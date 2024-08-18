@@ -4,27 +4,39 @@ import { useRouter } from "next/router";
 import appwriteSDK from "../utils";
 import { Button } from 'react-bootstrap';
 
-function welcome() {
-  const [user, setUser] = useState(null);
+interface User {
+  name: string;
+  email: string;
+}
+
+const Welcome: React.FC = () => {
+  const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
   const getUser = async () => {
-    const userData = (await appwriteSDK) && appwriteSDK.account.get();
-    userData
-      .then((res) => setUser(res))
-      .catch((err) => {
-        router.push("/");
-        console.log(err);
-      });
+    try {
+      const userData = await appwriteSDK.account.get();
+      setUser(userData);
+    } catch (err) {
+      router.push("/");
+      console.log(err);
+    }
   };
+
   const logOut = async () => {
-    await appwriteSDK.account.deleteSession("current");
-    alert("logout successful");
-    router.push("/");
+    try {
+      await appwriteSDK.account.deleteSession("current");
+      alert("logout successful");
+      router.push("/");
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   useEffect(() => {
     getUser();
   }, []);
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -45,4 +57,5 @@ function welcome() {
     </div>
   );
 }
-export default welcome;
+
+export default Welcome;
