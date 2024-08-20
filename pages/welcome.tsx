@@ -34,6 +34,16 @@ const Welcome: React.FC = () => {
     }
   };
 
+  // const createPost = async () => {
+  //   await fetch('/api/posts/create', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ user.name, user.email }),
+  //   });
+  // };
+
   useEffect(() => {
     getUser();
   }, []);
