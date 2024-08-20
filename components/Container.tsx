@@ -5,9 +5,9 @@ export default function MainContainer(): JSX.Element {
     const authRedirect = async (): Promise<void> => {
         try {
           await appwriteSDK.account.createOAuth2Session(
-            "github",
-            "http://localhost:3000/welcome",
-            "http://localhost:3000"
+            process.env.APPWRITE_SDK_NAME || '',
+            process.env.APPWRITE_SDK_PAGE,
+            process.env.APPWRITE_SDK_URL
           );
         } catch (error) {
           console.log(error);
