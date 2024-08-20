@@ -3,31 +3,34 @@ import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 import appwriteSDK from "../utils";
 
 const MainNavbar: React.FC = () => {
-    const authRedirect = async () => {
-        try {
-          await appwriteSDK.account.createOAuth2Session(
-            process.env.APPWRITE_SDK_NAME || '',
-            process.env.APPWRITE_SDK_PAGE,
-            process.env.APPWRITE_SDK_URL
-          );
-        } catch (error) {
-          console.log(error);
-        }
-      };
+  const authRedirect = async () => {
+    try {
+      const sdkName = process.env.APPWRITE_SDK_NAME || 'github';
+      const sdkPage = process.env.APPWRITE_SDK_PAGE || 'http://localhost:3000/welcome';
+      const sdkUrl = process.env.APPWRITE_SDK_URL || 'http://localhost:3000';
+      await appwriteSDK.account.createOAuth2Session(
+        sdkName,
+        sdkPage,
+        sdkUrl
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Navbar className='custom-navbar' variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="/">OrestAI</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-                <Nav.Link href="/">Pricing</Nav.Link>
-            </Nav>
-            <Nav>
-                <Nav.Item>
-                    <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">Sign In</Button>
-                </Nav.Item>
-            </Nav>
+          <Nav className="me-auto">
+            <Nav.Link href="/">Pricing</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Item>
+              <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">Sign In</Button>
+            </Nav.Item>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

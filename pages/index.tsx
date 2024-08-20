@@ -1,22 +1,10 @@
 import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
-import appwriteSDK from "../utils";
 import MainNavbar from "../components/Navbar";
 import Content from "../components/Content";
 import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
-  const authRedirect = async () => {
-    try {
-      await appwriteSDK.account.createOAuth2Session(
-        process.env.APPWRITE_SDK_NAME || '',
-        process.env.APPWRITE_SDK_PAGE,
-        process.env.APPWRITE_SDK_URL
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  };
   return (
     <div className="body">
       <Head>
