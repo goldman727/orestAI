@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import appwriteSDK from "../utils";
 import { Button } from 'react-bootstrap';
+import coreConstants from "./core.Constants";
 
 interface User {
   name: string;
@@ -40,17 +41,17 @@ const Welcome: React.FC = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className="mb-4">Github Authenticated Page</h1>
+        <h1 className="mb-4">{coreConstants.welcome.title}</h1>
         {user && (
           <div>
             <p>
-              User:{" "}
+              {coreConstants.welcome.user}:{" "}
               <span className="fs-3 fw-bold text-capitalize">{user.name}</span>
             </p>
             <p>
-              Email: <span className="fs-3 fw-normal">{user.email}</span>
+              {coreConstants.welcome.email} <span className="fs-3 fw-normal">{user.email}</span>
             </p>
-            <Button variant="primary" className="mt-3" onClick={logOut}>Log Out</Button>
+            <Button variant="primary" className="mt-3" onClick={logOut}>{coreConstants.welcome.logOut}</Button>
           </div>
         )}
       </main>

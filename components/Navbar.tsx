@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 import appwriteSDK from "../utils";
+import componentsConstants from '../components/components.Constants';
 
 const MainNavbar: React.FC = () => {
     const authRedirect = async () => {
@@ -17,15 +18,15 @@ const MainNavbar: React.FC = () => {
   return (
     <Navbar className='custom-navbar' variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/">OrestAI</Navbar.Brand>
+        <Navbar.Brand href="/">{componentsConstants.navbar.title}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-                <Nav.Link href="/">Pricing</Nav.Link>
+                <Nav.Link href="/">{componentsConstants.navbar.pricing}</Nav.Link>
             </Nav>
             <Nav>
                 <Nav.Item>
-                    <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">Sign In</Button>
+                    <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">{componentsConstants.navbar.title}</Button>
                 </Nav.Item>
             </Nav>
         </Navbar.Collapse>
