@@ -24,14 +24,14 @@ const MainNavbar: React.FC = () => {
         <Navbar.Brand href="/">{componentsConstants.navbar.title}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-                <Nav.Link href="/">Pricing</Nav.Link>
-            </Nav>
-            <Nav>
-                <Nav.Item>
-                    <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">Sign In</Button>
-                </Nav.Item>
-            </Nav>
+          <Nav className="me-auto">
+            <Nav.Link href="/">Pricing</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Item>
+              <Button variant="outline-light" onClick={authRedirect} className="rounded-pill">Sign In</Button>
+            </Nav.Item>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
