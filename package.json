@@ -9,13 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.8.0",
+    "@stripe/stripe-js": "^4.3.0",
     "appwrite": "^8.0.1",
     "bootstrap": "^5.3.3",
     "next": "12.1.6",
     "pg": "^8.12.0",
     "react": "18.2.0",
     "react-bootstrap": "^2.10.4",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "stripe": "^16.8.0"
   },
   "devDependencies": {
     "@types/node": "^22.3.0",

@@ -36,3 +36,14 @@
 .hr-class {
     margin: 10px;
 }
+
+.welcome-card {
+    border: 1px solid;
+    padding: 100px;
+    border-radius: 22px;
+    background: #0f0f10;
+}
+
+.mt-5 {
+    margin-left: 15px;
+}

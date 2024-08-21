@@ -1,9 +1,10 @@
 const coreConstants = {
-    title: "Appwrite Authentication with Github",
+    title: "Authenticated with github account",
     welcome: {
-        title: "Appwrite Authentication with Github",
+        title: "Authenticated with github account",
         user: "User: ",
         email: "Email: ",
+        checkout: "Go To CheckOut",
         logOut: "Log Out"
     }
 

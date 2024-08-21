@@ -34,15 +34,9 @@ const Welcome: React.FC = () => {
     }
   };
 
-  // const createPost = async () => {
-  //   await fetch('/api/posts/create', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ user.name, user.email }),
-  //   });
-  // };
+  const redirectToCheckOut = () => {
+    router.push('/checkout');
+  };
 
   useEffect(() => {
     getUser();
@@ -51,19 +45,22 @@ const Welcome: React.FC = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className="mb-4">{coreConstants.welcome.title}</h1>
-        {user && (
-          <div>
-            <p>
-              {coreConstants.welcome.user}:{" "}
-              <span className="fs-3 fw-bold text-capitalize">{user.name}</span>
-            </p>
-            <p>
-              {coreConstants.welcome.email} <span className="fs-3 fw-normal">{user.email}</span>
-            </p>
-            <Button variant="primary" className="mt-3" onClick={logOut}>{coreConstants.welcome.logOut}</Button>
-          </div>
-        )}
+        <div className="welcome-card">
+          <h1 className="mb-4">{coreConstants.welcome.title}</h1>
+          {user && (
+            <div>
+              <p>
+                {coreConstants.welcome.user}:{" "}
+                <span className="fs-5 fw-bold text-capitalize">{user.name}</span>
+              </p>
+              <p>
+                {coreConstants.welcome.email} <span className="fs-5 fw-normal">{user.email}</span>
+              </p>
+              <Button variant="primary" className="mt-5" onClick={redirectToCheckOut}>{coreConstants.welcome.checkout}</Button>
+              <Button variant="outline-light" className="mt-5" onClick={logOut}>{coreConstants.welcome.logOut}</Button>
+            </div>
+          )}
+        </div>
       </main>
     </div>
   );
