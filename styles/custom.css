@@ -40,8 +40,8 @@
 .welcome-card {
     border: 1px solid;
     padding: 100px;
-    border-radius: 22px;
-    background: #0f0f10;
+    border-radius: 10px;
+    background: #131314;
 }
 
 .mt-5 {
