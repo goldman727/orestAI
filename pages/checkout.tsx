@@ -1,6 +1,7 @@
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import { Button } from 'react-bootstrap';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
@@ -26,7 +27,7 @@ const Checkout: React.FC = () => {
   return (
     <div>
       <h1>Checkout</h1>
-      <button onClick={handleCheckout}>Proceed to Checkout</button>
+      <Button variant="danger" className="mt-2" onClick={handleCheckout}>Proceed to Checkout</Button>
     </div>
   );
 };
