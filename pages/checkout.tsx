@@ -13,8 +13,7 @@ const Checkout: React.FC = () => {
       },
       body: JSON.stringify({
         items: [
-          { name: 'Product 1', price: 2000, quantity: 1 },
-          { name: 'Product 2', price: 1500, quantity: 2 },
+          { name: 'OrestAI Product', price: 20, quantity: 1 },
         ],
       }),
     });
