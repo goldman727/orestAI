@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import appwriteSDK from "../utils";
 import { Button } from 'react-bootstrap';
 import coreConstants from "./core.Constants";
+import useStringStore from '../store/useStringStore';
 
 interface User {
   name: string;
@@ -14,10 +15,17 @@ const Welcome: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
+  const setName = useStringStore((state) => state.setName);
+  const setEmail = useStringStore((state) => state.setEmail);
+
   const getUser = async () => {
     try {
       const userData = await appwriteSDK.account.get();
       setUser(userData);
+
+      setName(userData.name);
+      setEmail(userData.email);
+
     } catch (err) {
       router.push("/");
       console.log(err);
