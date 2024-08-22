@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button, Navbar, Nav, Container } from 'react-bootstrap';
-import appwriteSDK from "../utils";
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import componentsConstants from '../components/components.Constants';
+import useStringStore from '../store/useStringStore';
 
 const DashboardNavbar: React.FC = () => {
+    const name = useStringStore((state) => state.name);
     return (
         <Navbar className='custom-navbar' variant="dark" expand="lg">
             <Container>
@@ -15,7 +16,7 @@ const DashboardNavbar: React.FC = () => {
                     </Nav>
                     <Nav>
                         <Nav.Item>
-                            <p>Kuzmychenko Orest</p>
+                            <p>{name}</p>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>

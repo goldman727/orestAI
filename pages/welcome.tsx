@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import appwriteSDK from "../utils";
 import { Button } from 'react-bootstrap';
 import coreConstants from "./core.Constants";
+import useStringStore from '../store/useStringStore';
 
 interface User {
   name: string;
@@ -14,10 +15,29 @@ const Welcome: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
+  const setName = useStringStore((state) => state.setName);
+  const setEmail = useStringStore((state) => state.setEmail);
+
   const getUser = async () => {
     try {
       const userData = await appwriteSDK.account.get();
       setUser(userData);
+
+      setName(userData.name);
+      setEmail(userData.email);
+
+      // Send POST request to API
+      const res = await fetch('/api/users/insertUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({'name': userData.name, 'email': userData.email}),
+      });
+
+      const data = await res.json();
+      console.log("API response", data.message)
+
     } catch (err) {
       router.push("/");
       console.log(err);

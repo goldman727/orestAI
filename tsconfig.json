@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js", "lib/postgres.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js", "lib/postgres.ts", "store/useStringStore.js", "pages/api/users/insertUser.js", "lib/db.js"],
   "exclude": ["node_modules"]
 }
