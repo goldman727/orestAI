@@ -4,6 +4,12 @@ import MainNavbar from "../components/Navbar";
 import Content from "../components/Content";
 import Footer from "../components/Footer";
 
+const rollbar = new Rollbar({
+  accessToken: '68ccf92c4f7e4fdb913e8893ef38951d',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+});
+
 const Home: React.FC = () => {
   return (
     <div className="body">
