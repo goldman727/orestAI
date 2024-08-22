@@ -26,6 +26,18 @@ const Welcome: React.FC = () => {
       setName(userData.name);
       setEmail(userData.email);
 
+      // Send POST request to API
+      const res = await fetch('http://localhost:3000/api/users/insertUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({'name': userData.name, 'email': userData.email}),
+      });
+
+      const data = await res.json();
+      console.log("API response", data.message)
+
     } catch (err) {
       router.push("/");
       console.log(err);
